@@ -1,0 +1,362 @@
+/* ====================================================== */
+/* FINAL ADJUSTMENT: SHIFTED MORE LEFT (-12px)            */
+/* ====================================================== */
+
+/* ১. মেইন কন্টেইনার */
+.custom-center-container {
+    width: 100%; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    /* ফর্মের ইনপুট থেকে দূরত্ব */
+    margin-top: 20px; 
+    margin-bottom: 10px;
+    
+    position: relative;
+    z-index: 10;
+}
+
+/* ২. কন্টেন্ট র‍্যাপার */
+.custom-content-wrapper {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    
+    direction: rtl; 
+    gap: 10px; 
+    
+    max-width: 100%;
+    
+    /* === ফাইনাল পজিশন: -12px === */
+    transform: translateX(-12px) !important; 
+}
+
+/* ৩. টেক্সট লেবেল */
+.custom-label {
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* ৪. অ্যাকশন গ্রুপ */
+.custom-action-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px; 
+}
+
+/* ৫. বাটন ডিজাইন */
+.custom-btn {
+    background: rgba(238, 159, 13, 0.08) !important;
+    color: #ee9f0d !important;
+    
+    font-family: "Rubik", sans-serif;
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    text-decoration: none;
+    
+    height: 32px !important;
+    line-height: 32px !important;
+    padding: 0 12px !important;
+    
+    border-radius: 8px !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+    
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.custom-btn:hover {
+    background: rgba(238, 159, 13, 0.15) !important;
+    color: #d68b00 !important;
+    transform: translateY(-2px);
+}
+
+/* ৬. ড্রপডাউন বাটন প্যাডিং */
+.drop-btn {
+    padding: 0 10px !important;
+}
+
+/* ৮. ড্রপডাউন এরিয়া */
+.custom-dropdown-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-sep-line {
+    height: 1px;
+    background: #eee;
+    margin: 3px 0;
+}
+
+
+
+
+
+/* ====================================================== */
+/* PREMIUM POPUP MODAL STYLES (Updated)                   */
+/* ====================================================== */
+
+/* Overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker dim */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Popup Box */
+.popup-box {
+    background: #fff;
+    width: 85%;
+    max-width: 340px;
+    border-radius: 20px;
+    padding: 40px 25px 30px 25px; /* Top padding increased for Close Icon */
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9) translateY(15px);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-overlay.active .popup-box {
+    transform: scale(1) translateY(0);
+}
+
+/* Close Icon (X) - Top Left */
+.close-icon-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* RTL Layout: বাম পাশে */
+    width: 32px;
+    height: 32px;
+    background: #f5f5f5;
+    color: #666;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-size: 16px;
+}
+
+.close-icon-btn:hover {
+    background: #ffeded;
+    color: #d32f2f;
+    transform: rotate(90deg);
+}
+
+/* Header */
+.popup-header {
+    margin-bottom: 25px;
+}
+
+.popup-header h3 {
+    margin: 0 0 8px 0;
+    font-family: "Alexandria", serif;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.popup-subtitle {
+    color: #888;
+    font-size: 0.85rem;
+    font-family: "Rubik", sans-serif;
+}
+
+/* Menu List */
+.popup-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.popup-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: #f9f9f9;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.link-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.link-content i {
+    font-size: 1.1rem;
+    color: #ee9f0d;
+    width: 24px;
+    text-align: center;
+}
+
+.link-content span {
+    color: #444;
+    font-family: "Rubik", sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.link-arrow {
+    color: #ddd;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+/* Hover Effects */
+.popup-link:hover {
+    background: #fff;
+    border-color: #ee9f0d;
+    box-shadow: 0 5px 15px rgba(238, 159, 13, 0.1);
+    transform: translateY(-2px);
+}
+
+.popup-link:hover .link-arrow {
+    color: #ee9f0d;
+    transform: translateX(-5px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .custom-center-container {
+        margin-top: 15px;
+    }
+    .custom-content-wrapper {
+        gap: 8px;
+        transform: translateX(-14px) !important;
+    }
+    .custom-btn {
+        height: 30px !important;
+        line-height: 30px !important;
+        padding: 0 10px !important;
+        font-size: 0.8rem !important;
+    }
+    .popup-box {
+        width: 90%;
+        padding: 35px 20px 25px 20px;
+    }
+}
+@media (max-width: 380px) {
+    .custom-content-wrapper {
+        transform: scale(0.90) translateX(-14px) !important;
+    }
+}
+
+
+/* ========================================= */
+/* MOBILE RESPONSIVE                         */
+/* ========================================= */
+
+@media (max-width: 600px) {
+    .custom-center-container {
+        margin-top: 15px;
+    }
+    
+    .custom-content-wrapper {
+        gap: 8px;
+        transform: translateX(-14px) !important; 
+    }
+
+    .custom-label {
+        font-size: 0.85rem;
+    }
+    
+    .custom-btn {
+        height: 30px !important;
+        line-height: 30px !important;
+        padding: 0 10px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* ================================================= */
+    /* মোবাইলে ড্রপডাউন পজিশন ফিক্স (ডাইন সাইটে সরানো) */
+    /* ================================================= */
+
+    .custom-menu-box {
+        bottom: auto !important;
+        top: 125% !important; 
+        
+        /* লজিক: 
+           margin-left: 15px -> পুরো বক্সটি ১৫ পিক্সেল ডানে সরবে (টাইম সাইটে)।
+           এতে বক্সটি লেবেলের সাথে মিশে যাবে না।
+        */
+        margin-left: 15px !important; 
+        
+        transform: translateX(-50%) translateY(-10px) scale(0.95);
+    }
+    
+    .custom-menu-box.show-menu {
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+
+    /* অ্যারো পজিশন (বক্স সরলে অ্যারোও সরে যায়, তাই এটাকে বামে এনে ব্যালেন্স করা হলো) */
+    .custom-menu-box::after {
+        bottom: auto !important; 
+        top: -5px !important;    
+        
+        /* বক্স ডানে সরানোর কারণে অ্যারোটিকে আবার বামে আনা হলো যেন বাটনের নিচেই থাকে */
+        margin-left: -15px !important; 
+        
+        border-bottom: none !important;
+        border-right: none !important;
+        border-top: 1px solid rgba(238, 159, 13, 0.15) !important;
+        border-left: 1px solid rgba(238, 159, 13, 0.15) !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .custom-content-wrapper {
+        transform: scale(0.90) translateX(-14px) !important; 
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .custom-label {
+        font-size: 0.8rem;
+    }
+    
+    .custom-btn {
+        font-size: 0.75rem !important;
+        padding: 0 8px !important;
+    }
+}

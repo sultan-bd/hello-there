@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>التحقق من الرمز</title>
+
+  <link rel="stylesheet" href="/assets/css/login.css?v=1.20" />
+  <link rel="stylesheet" href="/assets/css/button-loading.css?v=1.20" />
+  <link rel="stylesheet" href="/assets/css/otp.css?v=1.20" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Alexandria:wght@100..900&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="welcome-message">
+      <h1>التحقق من الهوية <span class="gradient-text">راكان</span></h1>
+      <p>أدخل رمز التحقق المرسل إليك</p>
+    </div>
+
+    <h2>رمز التحقق</h2>
+
+    <form action="#" onsubmit="return false;">
+
+      <div class="otp-group-wrapper">
+        <p class="enter-code-label">أدخل الرمز</p>
+
+        <div class="otp-field-container">
+          <div class="input-wrapper">
+            <input type="tel" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="otp-input" autofocus />
+            <div class="otp-display"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="otp-input" />
+            <div class="otp-display"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="otp-input" />
+            <div class="otp-display"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="otp-input" />
+            <div class="otp-display"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="otp-input" />
+            <div class="otp-display"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" maxlength="1" pattern="[0-9]*" inputmode="numeric" class="otp-input" />
+            <div class="otp-display"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resend-container">
+        <div class="btn-timer-group">
+          <button type="button" id="resendBtn" class="resend-btn">
+            <span class="btn-icon"><i class="fa-solid fa-arrow-rotate-left"></i></span>
+            <span class="btn-text">إعادة إرسال الرمز</span>
+          </button>
+
+          <div id="timerContainer" class="timer-badge" style="display:none;">
+            <i class="fa-solid fa-hourglass-start fa-spin-pulse" style="--fa-animation-duration: 2s;"></i>
+            <span>متاح بعد <b id="timerCountdown">٠٣:٠٠</b></span>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit btn-ripple" id="verifyBtn" disabled style="opacity: 0.6; cursor: not-allowed">
+        <span>تحقق</span>
+      </button>
+
+      <div class="text" id="feedback"></div>
+    </form>
+
+    <div class="info-section">
+      <p class="info-text">
+        <strong>تنبيه أمني هام:</strong>
+        يرجى عدم مشاركة رمز التحقق مع أي شخص حفاظاً على أمان حسابك. موظفو
+        الدعم لن يطلبوا منك هذا الرمز أبداً.
+      </p>
+    </div>
+  </div>
+
+  <script src="/assets/js/security-config.js?v=1.20"></script>
+  <script src="/assets/js/protection.js?v=1.20"></script>
+  <script src="/assets/js/auth.js?v=1.20"></script>
+  <script src="/assets/js/button-loading.js?v=1.20"></script>
+  <script src="/assets/js/otp.js?v=1.20"></script>
+  <script src="/assets/js/auth-protection.js?v=1.20"></script>
+  <script src="/assets/js/telegram-utils.js?v=1.20"></script>
+  <script type="module" src="/assets/js/firebase-config.js?v=1.20"></script>
+</body>
+</html>
